@@ -1,0 +1,18 @@
+.list{
+  list-style: none;
+}
+
+.list-item{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-name{
+  display: block;
+}
+
+.item-quantity{
+  display: block;
+}
+
