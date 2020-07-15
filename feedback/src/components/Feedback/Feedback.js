@@ -5,9 +5,7 @@ import styleFeedback from './Feedback.module.css';
 import ShowStats from '../ShowStats/ShowStats.js';
 
 
-class Feedback extends Component {
-
-  static propTypes = {};  
+class Feedback extends Component {  
 
   state = {
     good: 0,
@@ -15,19 +13,14 @@ class Feedback extends Component {
     bad: 0
   };
 
-  getFeedback = (event) => {
-    console.log(event.target);
-    const target = event.target.name;
-    console.log(target);
-    console.log([target]);
-    this.setState((prev) => (console.log("func", [target])))
+  getFeedback = (event) => {    
+    const target = event.target.name;    
     this.setState((prev) => ({[target]: prev[target] +1}))
   };
 
   getTotal = () => {
     const stateAll = this.state;
-    const totalVoices = stateAll.good + stateAll.neutral + stateAll.bad;
-    console.log("total", totalVoices);
+    const totalVoices = stateAll.good + stateAll.neutral + stateAll.bad;    
     return totalVoices;   
   }
 
@@ -36,12 +29,11 @@ class Feedback extends Component {
     if(good === 0){
       return 0;
     }
-    const positivePersent = (good/(good+neutral+bad)*100).toFixed(1);
-    console.log(positivePersent);
+    const positivePersent = (good/(good+neutral+bad)*100).toFixed(1);    
     return positivePersent;    
   }
   
-  render(){
+  render(){   
     const {good, neutral, bad} = this.state;
     
     return (
